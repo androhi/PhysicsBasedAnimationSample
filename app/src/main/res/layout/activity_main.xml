@@ -7,27 +7,112 @@
     android:layout_height="match_parent"
     tools:context="com.androhi.physicsbasedanimationsample.MainActivity">
 
+    <TextView
+        android:id="@+id/dumping_ratio_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Dumping ratio"/>
+
+    <RadioGroup
+        android:id="@+id/dumping_ratio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/dumping_ratio_label">
+
+        <RadioButton
+            android:id="@+id/dumping_ratio_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HIGH"/>
+
+        <RadioButton
+            android:id="@+id/dumping_ratio_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="MEDIUM"/>
+
+        <RadioButton
+            android:id="@+id/dumping_ratio_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOW"/>
+
+        <RadioButton
+            android:id="@+id/dumping_ratio_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/stiffness_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        android:text="Stiffness"
+        app:layout_constraintTop_toBottomOf="@id/dumping_ratio_group"/>
+
+    <RadioGroup
+        android:id="@+id/stiffness_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/stiffness_label">
+
+        <RadioButton
+            android:id="@+id/stiffness_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HIGH"/>
+
+        <RadioButton
+            android:id="@+id/stiffness_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="MEDIUM"/>
+
+        <RadioButton
+            android:id="@+id/stiffness_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOW"/>
+
+        <RadioButton
+            android:id="@+id/stiffness_very_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VERY LOW"/>
+
+    </RadioGroup>
+
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_android_black_24dp"
         android:tint="#00aa00"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <Button
         android:id="@+id/reset_button"
         android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        android:layout_height="wrap_content"
         android:text="reset"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/start_button"
         app:layout_constraintBottom_toBottomOf="parent"
     />
+
     <Button
         android:id="@+id/start_button"
         android:layout_width="wrap_content"
