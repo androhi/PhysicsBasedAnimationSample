@@ -44,14 +44,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         startButton.setOnClickListener {
+            enableStart(false)
             scaleAnimationX.spring = createSpringForce()
             scaleAnimationY.spring = createSpringForce()
             startAnimation()
         }
 
         resetButton.setOnClickListener {
+            enableStart(true)
             resetScaleAndAnimation()
         }
+
+        enableStart(true)
     }
 
     private fun createAnimation(property: DynamicAnimation.ViewProperty): SpringAnimation {
@@ -90,6 +94,11 @@ class MainActivity : AppCompatActivity() {
         scaleAnimationY.cancel()
         imageView?.scaleX = INITIAL_SCALE
         imageView?.scaleY = INITIAL_SCALE
+    }
+
+    private fun enableStart(enabled: Boolean) {
+        startButton.isEnabled = enabled
+        resetButton.isEnabled = !enabled
     }
 
     companion object {
